@@ -1,0 +1,5 @@
+An A.I. program was written that determines optimal routes for a random number of vehicles delivering a random number of packages to random points on a map.
+
+An A* approach was used which analyzed all the possible next moves that could be taken by the vehicles. For each of these moves, each possible move after those ones was also considered. The value of each move was determined by summing the costs of 
+
+A simulated annealing approach was also used by placing the vehicles and packages at random points on the map, and then using an algorithm called Djikstra's algorithm to determine the shortest route to the end goal. Random states were repeatedly examined with the states getting less random as the program progressed.
