@@ -1,0 +1,12 @@
+I was on a team that created an A.I. for a 2-player game called "The Mad King".
+On a 5x5 grid, Player 1 has 3 guards and 1 king, which can all move 1 space in any direction. Player1s king can leap over guards to an empty space.
+Player 2 has 5 equal dragon pieces that can each move one space in any direction.
+Player 1 can attack player2 by moving onto the space of a player2 piece that is adjacent to two of player1s pieces. 
+Player 2 has 5 equal dragon pieces, and gains a dragon by attacking a guard, which is done by moving 3 dragon pieces adjacent to the guard.
+Player2 wins by surrounding the king with dragons in a position where the king can't move, while player1 wins by moving the king to the last row of the grid.
+
+For each turn, the A.I. examines all the possible moves it could make. It then examines all the possible moves which the opponent could make for each of those moves. The move chosen is the one which has the smallest loss for the A.I in worst case scenario following the move. The process of examining every potential move continues until 8 moves in the future have been considered. An alpha-beta pruning algorithm determines certain sets of moves to be a poor path to victory, and stops any further search down these paths. The search selectively continues past this point if the path looks particularly good, using a beam search that only continues for the 3 best paths following a move, instead of every path. These shortcuts helped the A.I. choose better moves because it had a time limit for how long turns could take
+
+To reduce wait time, a transposition table is used to record states that the game had already been in, along with the move that the A.I. should take  when the game is in that state.
+
+The A.I. is quite difficult to defeat. This chart shows the improvements in how the it performed with the added in features. With the full A.I., the best result achieved by the player was a draw, which did not happen often.
